@@ -1,0 +1,254 @@
+{
+	"compiler": {
+		"version": "0.5.12+commit.7709ece9"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "src",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "dst",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "amt",
+						"type": "uint256"
+					}
+				],
+				"name": "Approval",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "src",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "dst",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "amt",
+						"type": "uint256"
+					}
+				],
+				"name": "Transfer",
+				"type": "event"
+			},
+			{
+				"constant": true,
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "src",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "dst",
+						"type": "address"
+					}
+				],
+				"name": "allowance",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": false,
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "dst",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "amt",
+						"type": "uint256"
+					}
+				],
+				"name": "approve",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"payable": false,
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "whom",
+						"type": "address"
+					}
+				],
+				"name": "balanceOf",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [],
+				"name": "totalSupply",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": false,
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "dst",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "amt",
+						"type": "uint256"
+					}
+				],
+				"name": "transfer",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"payable": false,
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"constant": false,
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "src",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "dst",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "amt",
+						"type": "uint256"
+					}
+				],
+				"name": "transferFrom",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"payable": false,
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"methods": {}
+		},
+		"userdoc": {
+			"methods": {}
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"Contracts/BToken.sol": "IERC20"
+		},
+		"evmVersion": "petersburg",
+		"libraries": {},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"Contracts/BColor.sol": {
+			"keccak256": "0x47e6dfdf55fbb5f781d4422882964b5026a9d3ae6d9c36bf5b909bf8ffac840b",
+			"urls": [
+				"bzz-raw://37a685b44a7507058abd4602e5132f1001ec67799521f4c3db83d787a11d31f9",
+				"dweb:/ipfs/QmaFje2c9F35ws5Na6n8BRur2RXDGopZeUiFJy1ywwH5EV"
+			]
+		},
+		"Contracts/BConst.sol": {
+			"keccak256": "0xc09e1b6426216e6fc1246376f2796ff3e176036bc7639e584cf365aedebd0083",
+			"urls": [
+				"bzz-raw://d813f692c759a83e62614caf0bde6ce976dd1614af0197739ff4183621284b32",
+				"dweb:/ipfs/QmdMoeU8gQ1RYk5XDhbpatzFKbqUHNSkCt5KyhBQVWHhcv"
+			]
+		},
+		"Contracts/BNum.sol": {
+			"keccak256": "0xb202d7e4df259922cd473b65caaf4ed622715b4cdaed24d532968eaa5c3c7f46",
+			"urls": [
+				"bzz-raw://46ec88582356707ec82a6655746e6619b4f1076f77a6a4167f0c2ea9a7dd59ce",
+				"dweb:/ipfs/Qmb3hkBCfx5RQaoTHDhGAuhRoZDh1JVWVKhbg85dnBVC4z"
+			]
+		},
+		"Contracts/BToken.sol": {
+			"keccak256": "0xe983211923441425cab52c8f581d0f6510378a9e3fffec814fd1895969ab58dd",
+			"urls": [
+				"bzz-raw://843b1f0f3fe8e8c1c1b191232998ce42f82e314feff12d26ef60fee10afc0708",
+				"dweb:/ipfs/QmPhtTYoTGG9rQK5Qp89qn64QKZZMzXffhP3DgrWK8tMPs"
+			]
+		}
+	},
+	"version": 1
+}

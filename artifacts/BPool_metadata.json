@@ -1,0 +1,1723 @@
+{
+	"compiler": {
+		"version": "0.5.12+commit.7709ece9"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"payable": false,
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "src",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "dst",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "amt",
+						"type": "uint256"
+					}
+				],
+				"name": "Approval",
+				"type": "event"
+			},
+			{
+				"anonymous": true,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "bytes4",
+						"name": "sig",
+						"type": "bytes4"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "caller",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "bytes",
+						"name": "data",
+						"type": "bytes"
+					}
+				],
+				"name": "LOG_CALL",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "caller",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "tokenOut",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "tokenAmountOut",
+						"type": "uint256"
+					}
+				],
+				"name": "LOG_EXIT",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "caller",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "tokenIn",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "tokenAmountIn",
+						"type": "uint256"
+					}
+				],
+				"name": "LOG_JOIN",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "caller",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "tokenIn",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "tokenOut",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "tokenAmountIn",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "tokenAmountOut",
+						"type": "uint256"
+					}
+				],
+				"name": "LOG_SWAP",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "src",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "dst",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "amt",
+						"type": "uint256"
+					}
+				],
+				"name": "Transfer",
+				"type": "event"
+			},
+			{
+				"constant": true,
+				"inputs": [],
+				"name": "BONE",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [],
+				"name": "BPOW_PRECISION",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [],
+				"name": "EXIT_FEE",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [],
+				"name": "INIT_POOL_SUPPLY",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [],
+				"name": "MAX_BOUND_TOKENS",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [],
+				"name": "MAX_BPOW_BASE",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [],
+				"name": "MAX_FEE",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [],
+				"name": "MAX_IN_RATIO",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [],
+				"name": "MAX_OUT_RATIO",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [],
+				"name": "MAX_TOTAL_WEIGHT",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [],
+				"name": "MAX_WEIGHT",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [],
+				"name": "MIN_BALANCE",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [],
+				"name": "MIN_BOUND_TOKENS",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [],
+				"name": "MIN_BPOW_BASE",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [],
+				"name": "MIN_FEE",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [],
+				"name": "MIN_WEIGHT",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "src",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "dst",
+						"type": "address"
+					}
+				],
+				"name": "allowance",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": false,
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "dst",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "amt",
+						"type": "uint256"
+					}
+				],
+				"name": "approve",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"payable": false,
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "whom",
+						"type": "address"
+					}
+				],
+				"name": "balanceOf",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": false,
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "token",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "balance",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "denorm",
+						"type": "uint256"
+					}
+				],
+				"name": "bind",
+				"outputs": [],
+				"payable": false,
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "tokenBalanceIn",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "tokenWeightIn",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "tokenBalanceOut",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "tokenWeightOut",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "tokenAmountOut",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "swapFee",
+						"type": "uint256"
+					}
+				],
+				"name": "calcInGivenOut",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "tokenAmountIn",
+						"type": "uint256"
+					}
+				],
+				"payable": false,
+				"stateMutability": "pure",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "tokenBalanceIn",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "tokenWeightIn",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "tokenBalanceOut",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "tokenWeightOut",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "tokenAmountIn",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "swapFee",
+						"type": "uint256"
+					}
+				],
+				"name": "calcOutGivenIn",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "tokenAmountOut",
+						"type": "uint256"
+					}
+				],
+				"payable": false,
+				"stateMutability": "pure",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "tokenBalanceOut",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "tokenWeightOut",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "poolSupply",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "totalWeight",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "tokenAmountOut",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "swapFee",
+						"type": "uint256"
+					}
+				],
+				"name": "calcPoolInGivenSingleOut",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "poolAmountIn",
+						"type": "uint256"
+					}
+				],
+				"payable": false,
+				"stateMutability": "pure",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "tokenBalanceIn",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "tokenWeightIn",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "poolSupply",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "totalWeight",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "tokenAmountIn",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "swapFee",
+						"type": "uint256"
+					}
+				],
+				"name": "calcPoolOutGivenSingleIn",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "poolAmountOut",
+						"type": "uint256"
+					}
+				],
+				"payable": false,
+				"stateMutability": "pure",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "tokenBalanceIn",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "tokenWeightIn",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "poolSupply",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "totalWeight",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "poolAmountOut",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "swapFee",
+						"type": "uint256"
+					}
+				],
+				"name": "calcSingleInGivenPoolOut",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "tokenAmountIn",
+						"type": "uint256"
+					}
+				],
+				"payable": false,
+				"stateMutability": "pure",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "tokenBalanceOut",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "tokenWeightOut",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "poolSupply",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "totalWeight",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "poolAmountIn",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "swapFee",
+						"type": "uint256"
+					}
+				],
+				"name": "calcSingleOutGivenPoolIn",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "tokenAmountOut",
+						"type": "uint256"
+					}
+				],
+				"payable": false,
+				"stateMutability": "pure",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "tokenBalanceIn",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "tokenWeightIn",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "tokenBalanceOut",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "tokenWeightOut",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "swapFee",
+						"type": "uint256"
+					}
+				],
+				"name": "calcSpotPrice",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "spotPrice",
+						"type": "uint256"
+					}
+				],
+				"payable": false,
+				"stateMutability": "pure",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [],
+				"name": "decimals",
+				"outputs": [
+					{
+						"internalType": "uint8",
+						"name": "",
+						"type": "uint8"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": false,
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "dst",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "amt",
+						"type": "uint256"
+					}
+				],
+				"name": "decreaseApproval",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"payable": false,
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"constant": false,
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "poolAmountIn",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256[]",
+						"name": "minAmountsOut",
+						"type": "uint256[]"
+					}
+				],
+				"name": "exitPool",
+				"outputs": [],
+				"payable": false,
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"constant": false,
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "tokenOut",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "tokenAmountOut",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "maxPoolAmountIn",
+						"type": "uint256"
+					}
+				],
+				"name": "exitswapExternAmountOut",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "poolAmountIn",
+						"type": "uint256"
+					}
+				],
+				"payable": false,
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"constant": false,
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "tokenOut",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "poolAmountIn",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "minAmountOut",
+						"type": "uint256"
+					}
+				],
+				"name": "exitswapPoolAmountIn",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "tokenAmountOut",
+						"type": "uint256"
+					}
+				],
+				"payable": false,
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"constant": false,
+				"inputs": [],
+				"name": "finalize",
+				"outputs": [],
+				"payable": false,
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "token",
+						"type": "address"
+					}
+				],
+				"name": "getBalance",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [],
+				"name": "getColor",
+				"outputs": [
+					{
+						"internalType": "bytes32",
+						"name": "",
+						"type": "bytes32"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [],
+				"name": "getController",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [],
+				"name": "getCurrentTokens",
+				"outputs": [
+					{
+						"internalType": "address[]",
+						"name": "tokens",
+						"type": "address[]"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "token",
+						"type": "address"
+					}
+				],
+				"name": "getDenormalizedWeight",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [],
+				"name": "getFinalTokens",
+				"outputs": [
+					{
+						"internalType": "address[]",
+						"name": "tokens",
+						"type": "address[]"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "token",
+						"type": "address"
+					}
+				],
+				"name": "getNormalizedWeight",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [],
+				"name": "getNumTokens",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "tokenIn",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "tokenOut",
+						"type": "address"
+					}
+				],
+				"name": "getSpotPrice",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "spotPrice",
+						"type": "uint256"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "tokenIn",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "tokenOut",
+						"type": "address"
+					}
+				],
+				"name": "getSpotPriceSansFee",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "spotPrice",
+						"type": "uint256"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [],
+				"name": "getSwapFee",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [],
+				"name": "getTotalDenormalizedWeight",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": false,
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "token",
+						"type": "address"
+					}
+				],
+				"name": "gulp",
+				"outputs": [],
+				"payable": false,
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"constant": false,
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "dst",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "amt",
+						"type": "uint256"
+					}
+				],
+				"name": "increaseApproval",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"payable": false,
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "t",
+						"type": "address"
+					}
+				],
+				"name": "isBound",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [],
+				"name": "isFinalized",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [],
+				"name": "isPublicSwap",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": false,
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "poolAmountOut",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256[]",
+						"name": "maxAmountsIn",
+						"type": "uint256[]"
+					}
+				],
+				"name": "joinPool",
+				"outputs": [],
+				"payable": false,
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"constant": false,
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "tokenIn",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "tokenAmountIn",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "minPoolAmountOut",
+						"type": "uint256"
+					}
+				],
+				"name": "joinswapExternAmountIn",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "poolAmountOut",
+						"type": "uint256"
+					}
+				],
+				"payable": false,
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"constant": false,
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "tokenIn",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "poolAmountOut",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "maxAmountIn",
+						"type": "uint256"
+					}
+				],
+				"name": "joinswapPoolAmountOut",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "tokenAmountIn",
+						"type": "uint256"
+					}
+				],
+				"payable": false,
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [],
+				"name": "name",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": false,
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "token",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "balance",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "denorm",
+						"type": "uint256"
+					}
+				],
+				"name": "rebind",
+				"outputs": [],
+				"payable": false,
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"constant": false,
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "manager",
+						"type": "address"
+					}
+				],
+				"name": "setController",
+				"outputs": [],
+				"payable": false,
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"constant": false,
+				"inputs": [
+					{
+						"internalType": "bool",
+						"name": "public_",
+						"type": "bool"
+					}
+				],
+				"name": "setPublicSwap",
+				"outputs": [],
+				"payable": false,
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"constant": false,
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "swapFee",
+						"type": "uint256"
+					}
+				],
+				"name": "setSwapFee",
+				"outputs": [],
+				"payable": false,
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"constant": false,
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "tokenIn",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "tokenAmountIn",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "tokenOut",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "minAmountOut",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "maxPrice",
+						"type": "uint256"
+					}
+				],
+				"name": "swapExactAmountIn",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "tokenAmountOut",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "spotPriceAfter",
+						"type": "uint256"
+					}
+				],
+				"payable": false,
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"constant": false,
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "tokenIn",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "maxAmountIn",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "tokenOut",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "tokenAmountOut",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "maxPrice",
+						"type": "uint256"
+					}
+				],
+				"name": "swapExactAmountOut",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "tokenAmountIn",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "spotPriceAfter",
+						"type": "uint256"
+					}
+				],
+				"payable": false,
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [],
+				"name": "symbol",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [],
+				"name": "totalSupply",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": false,
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "dst",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "amt",
+						"type": "uint256"
+					}
+				],
+				"name": "transfer",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"payable": false,
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"constant": false,
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "src",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "dst",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "amt",
+						"type": "uint256"
+					}
+				],
+				"name": "transferFrom",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"payable": false,
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"constant": false,
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "token",
+						"type": "address"
+					}
+				],
+				"name": "unbind",
+				"outputs": [],
+				"payable": false,
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"methods": {}
+		},
+		"userdoc": {
+			"methods": {
+				"calcInGivenOut(uint256,uint256,uint256,uint256,uint256,uint256)": {
+					"notice": "******************************************************************************************** // calcInGivenOut                                                                            // // aI = tokenAmountIn                                                                        // // bO = tokenBalanceOut               /  /     bO      \\    (wO / wI)      \\                 // // bI = tokenBalanceIn          bI * |  | ------------  | ^            - 1  |                // // aO = tokenAmountOut    aI =        \\  \\ ( bO - aO ) /                   /                 // // wI = tokenWeightIn           --------------------------------------------                 // // wO = tokenWeightOut                          ( 1 - sF )                                   // // sF = swapFee                                                                              //*********************************************************************************************"
+				},
+				"calcOutGivenIn(uint256,uint256,uint256,uint256,uint256,uint256)": {
+					"notice": "******************************************************************************************** // calcOutGivenIn                                                                            // // aO = tokenAmountOut                                                                       // // bO = tokenBalanceOut                                                                      // // bI = tokenBalanceIn              /      /            bI             \\    (wI / wO) \\      // // aI = tokenAmountIn    aO = bO * |  1 - | --------------------------  | ^            |     // // wI = tokenWeightIn               \\      \\ ( bI + ( aI * ( 1 - sF )) /              /      // // wO = tokenWeightOut                                                                       // // sF = swapFee                                                                              //*********************************************************************************************"
+				},
+				"calcPoolInGivenSingleOut(uint256,uint256,uint256,uint256,uint256,uint256)": {
+					"notice": "******************************************************************************************** // calcPoolInGivenSingleOut                                                                  // // pAi = poolAmountIn               // /               tAo             \\\\     / wO \\     \\   // // bO = tokenBalanceOut            // | bO - -------------------------- |\\   | ---- |     \\  // // tAo = tokenAmountOut      pS - ||   \\     1 - ((1 - (tO / tW)) * sF)/  | ^ \\ tW /  * pS | // // ps = poolSupply                 \\\\ -----------------------------------/                /  // // wO = tokenWeightOut  pAi =       \\\\               bO                 /                /   // // tW = totalWeight           -------------------------------------------------------------  // // sF = swapFee                                        ( 1 - eF )                            // // eF = exitFee                                                                              //*********************************************************************************************"
+				},
+				"calcPoolOutGivenSingleIn(uint256,uint256,uint256,uint256,uint256,uint256)": {
+					"notice": "******************************************************************************************** // calcPoolOutGivenSingleIn                                                                  // // pAo = poolAmountOut         /                                              \\              // // tAi = tokenAmountIn        ///      /     //    wI \\      \\\\       \\     wI \\             // // wI = tokenWeightIn        //| tAi *| 1 - || 1 - --  | * sF || + tBi \\    --  \\            // // tW = totalWeight     pAo=||  \\      \\     \\\\    tW /      //         | ^ tW   | * pS - pS // // tBi = tokenBalanceIn      \\\\  ------------------------------------- /        /            // // pS = poolSupply            \\\\                    tBi               /        /             // // sF = swapFee                \\                                              /              //*********************************************************************************************"
+				},
+				"calcSingleInGivenPoolOut(uint256,uint256,uint256,uint256,uint256,uint256)": {
+					"notice": "******************************************************************************************** // calcSingleInGivenPoolOut                                                                  // // tAi = tokenAmountIn              //(pS + pAo)\\     /    1    \\\\                           // // pS = poolSupply                 || ---------  | ^ | --------- || * bI - bI                // // pAo = poolAmountOut              \\\\    pS    /     \\(wI / tW)//                           // // bI = balanceIn          tAi =  --------------------------------------------               // // wI = weightIn                              /      wI  \\                                   // // tW = totalWeight                          |  1 - ----  |  * sF                            // // sF = swapFee                               \\      tW  /                                   //*********************************************************************************************"
+				},
+				"calcSingleOutGivenPoolIn(uint256,uint256,uint256,uint256,uint256,uint256)": {
+					"notice": "******************************************************************************************** // calcSingleOutGivenPoolIn                                                                  // // tAo = tokenAmountOut            /      /                                             \\\\   // // bO = tokenBalanceOut           /      // pS - (pAi * (1 - eF)) \\     /    1    \\      \\\\  // // pAi = poolAmountIn            | bO - || ----------------------- | ^ | --------- | * b0 || // // ps = poolSupply                \\      \\\\          pS           /     \\(wO / tW)/      //  // // wI = tokenWeightIn      tAo =   \\      \\                                             //   // // tW = totalWeight                    /     /      wO \\       \\                             // // sF = swapFee                    *  | 1 - |  1 - ---- | * sF  |                            // // eF = exitFee                        \\     \\      tW /       /                             //*********************************************************************************************"
+				},
+				"calcSpotPrice(uint256,uint256,uint256,uint256,uint256)": {
+					"notice": "******************************************************************************************** // calcSpotPrice                                                                             // // sP = spotPrice                                                                            // // bI = tokenBalanceIn                ( bI / wI )         1                                  // // bO = tokenBalanceOut         sP =  -----------  *  ----------                             // // wI = tokenWeightIn                 ( bO / wO )     ( 1 - sF )                             // // wO = tokenWeightOut                                                                       // // sF = swapFee                                                                              //*********************************************************************************************"
+				}
+			}
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"Contracts/BPool.sol": "BPool"
+		},
+		"evmVersion": "petersburg",
+		"libraries": {},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"Contracts/BColor.sol": {
+			"keccak256": "0x47e6dfdf55fbb5f781d4422882964b5026a9d3ae6d9c36bf5b909bf8ffac840b",
+			"urls": [
+				"bzz-raw://37a685b44a7507058abd4602e5132f1001ec67799521f4c3db83d787a11d31f9",
+				"dweb:/ipfs/QmaFje2c9F35ws5Na6n8BRur2RXDGopZeUiFJy1ywwH5EV"
+			]
+		},
+		"Contracts/BConst.sol": {
+			"keccak256": "0xc09e1b6426216e6fc1246376f2796ff3e176036bc7639e584cf365aedebd0083",
+			"urls": [
+				"bzz-raw://d813f692c759a83e62614caf0bde6ce976dd1614af0197739ff4183621284b32",
+				"dweb:/ipfs/QmdMoeU8gQ1RYk5XDhbpatzFKbqUHNSkCt5KyhBQVWHhcv"
+			]
+		},
+		"Contracts/BMath.sol": {
+			"keccak256": "0xffd7e298d71685e08ca0c69947e48daa6bc306b851e94e45571867cacc9ea85b",
+			"urls": [
+				"bzz-raw://49767d333e98a0b2175c1ea3c5ceee319c8a4a66b8425e67744e1886b63fd792",
+				"dweb:/ipfs/QmfZC81Lo8iyTrBnfM48qGZaihNJKmHteX2mjj6V5seEbd"
+			]
+		},
+		"Contracts/BNum.sol": {
+			"keccak256": "0xb202d7e4df259922cd473b65caaf4ed622715b4cdaed24d532968eaa5c3c7f46",
+			"urls": [
+				"bzz-raw://46ec88582356707ec82a6655746e6619b4f1076f77a6a4167f0c2ea9a7dd59ce",
+				"dweb:/ipfs/Qmb3hkBCfx5RQaoTHDhGAuhRoZDh1JVWVKhbg85dnBVC4z"
+			]
+		},
+		"Contracts/BPool.sol": {
+			"keccak256": "0xe985b4563b2b568a1593d28985fe19e66ecac66166f0b3dd240771499f428797",
+			"urls": [
+				"bzz-raw://01f13639899d5b87819b65b92d4b60f89263c14322c7a4f2b0c54b2cfcba3014",
+				"dweb:/ipfs/QmTUeb7xcLBRJwz14AX3cpAafDBSMWDG9R9ZGJtDnAWzzJ"
+			]
+		},
+		"Contracts/BToken.sol": {
+			"keccak256": "0xe983211923441425cab52c8f581d0f6510378a9e3fffec814fd1895969ab58dd",
+			"urls": [
+				"bzz-raw://843b1f0f3fe8e8c1c1b191232998ce42f82e314feff12d26ef60fee10afc0708",
+				"dweb:/ipfs/QmPhtTYoTGG9rQK5Qp89qn64QKZZMzXffhP3DgrWK8tMPs"
+			]
+		}
+	},
+	"version": 1
+}

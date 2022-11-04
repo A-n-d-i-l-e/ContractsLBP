@@ -1,0 +1,889 @@
+{
+	"id": "68fd5e389f5bda1ec62ef1ebaa326ae3",
+	"_format": "hh-sol-build-info-1",
+	"solcVersion": "0.5.12",
+	"solcLongVersion": "0.5.12+commit.7709ece9",
+	"input": {
+		"language": "Solidity",
+		"sources": {
+			"Contracts/BColor.sol": {
+				"content": "\r\npragma solidity 0.5.12;\r\n\r\ncontract BColor {\r\n    function getColor()\r\n        external view\r\n        returns (bytes32);\r\n}\r\n\r\ncontract BBronze is BColor {\r\n    function getColor()\r\n        external view\r\n        returns (bytes32) {\r\n            return bytes32(\"BRONZE\");\r\n        }\r\n}\r\n"
+			}
+		},
+		"settings": {
+			"optimizer": {
+				"enabled": false,
+				"runs": 200
+			},
+			"outputSelection": {
+				"*": {
+					"": [
+						"ast"
+					],
+					"*": [
+						"abi",
+						"metadata",
+						"devdoc",
+						"userdoc",
+						"storageLayout",
+						"evm.legacyAssembly",
+						"evm.bytecode",
+						"evm.deployedBytecode",
+						"evm.methodIdentifiers",
+						"evm.gasEstimates",
+						"evm.assembly"
+					]
+				}
+			}
+		}
+	},
+	"output": {
+		"contracts": {
+			"Contracts/BColor.sol": {
+				"BBronze": {
+					"abi": [
+						{
+							"constant": true,
+							"inputs": [],
+							"name": "getColor",
+							"outputs": [
+								{
+									"internalType": "bytes32",
+									"name": "",
+									"type": "bytes32"
+								}
+							],
+							"payable": false,
+							"stateMutability": "view",
+							"type": "function"
+						}
+					],
+					"devdoc": {
+						"methods": {}
+					},
+					"evm": {
+						"assembly": "    /* \"Contracts/BColor.sol\":129:287  contract BBronze is BColor {\r... */\n  mstore(0x40, 0x80)\n  callvalue\n    /* \"--CODEGEN--\":8:17   */\n  dup1\n    /* \"--CODEGEN--\":5:7   */\n  iszero\n  tag_1\n  jumpi\n    /* \"--CODEGEN--\":30:31   */\n  0x00\n    /* \"--CODEGEN--\":27:28   */\n  dup1\n    /* \"--CODEGEN--\":20:32   */\n  revert\n    /* \"--CODEGEN--\":5:7   */\ntag_1:\n    /* \"Contracts/BColor.sol\":129:287  contract BBronze is BColor {\r... */\n  pop\n  dataSize(sub_0)\n  dup1\n  dataOffset(sub_0)\n  0x00\n  codecopy\n  0x00\n  return\nstop\n\nsub_0: assembly {\n        /* \"Contracts/BColor.sol\":129:287  contract BBronze is BColor {\r... */\n      mstore(0x40, 0x80)\n      callvalue\n        /* \"--CODEGEN--\":8:17   */\n      dup1\n        /* \"--CODEGEN--\":5:7   */\n      iszero\n      tag_1\n      jumpi\n        /* \"--CODEGEN--\":30:31   */\n      0x00\n        /* \"--CODEGEN--\":27:28   */\n      dup1\n        /* \"--CODEGEN--\":20:32   */\n      revert\n        /* \"--CODEGEN--\":5:7   */\n    tag_1:\n        /* \"Contracts/BColor.sol\":129:287  contract BBronze is BColor {\r... */\n      pop\n      jumpi(tag_2, lt(calldatasize, 0x04))\n      shr(0xe0, calldataload(0x00))\n      dup1\n      0x9a86139b\n      eq\n      tag_3\n      jumpi\n    tag_2:\n      0x00\n      dup1\n      revert\n        /* \"Contracts/BColor.sol\":163:284  function getColor()\r... */\n    tag_3:\n      tag_4\n      tag_5\n      jump\t// in\n    tag_4:\n      mload(0x40)\n      dup1\n      dup3\n      dup2\n      mstore\n      0x20\n      add\n      swap2\n      pop\n      pop\n      mload(0x40)\n      dup1\n      swap2\n      sub\n      swap1\n      return\n    tag_5:\n        /* \"Contracts/BColor.sol\":224:231  bytes32 */\n      0x00\n        /* \"Contracts/BColor.sol\":255:272  bytes32(\"BRONZE\") */\n      0x42524f4e5a450000000000000000000000000000000000000000000000000000\n        /* \"Contracts/BColor.sol\":248:272  return bytes32(\"BRONZE\") */\n      swap1\n      pop\n        /* \"Contracts/BColor.sol\":163:284  function getColor()\r... */\n      swap1\n      jump\t// out\n\n    auxdata: 0xa265627a7a72315820d1313bf9a2dcc2ad30d21fe1e9f11cb4f1a4c78330879d9ec06699197bb2cf0564736f6c634300050c0032\n}\n",
+						"bytecode": {
+							"linkReferences": {},
+							"object": "6080604052348015600f57600080fd5b5060a68061001e6000396000f3fe6080604052348015600f57600080fd5b506004361060285760003560e01c80639a86139b14602d575b600080fd5b60336049565b6040518082815260200191505060405180910390f35b60007f42524f4e5a45000000000000000000000000000000000000000000000000000090509056fea265627a7a72315820d1313bf9a2dcc2ad30d21fe1e9f11cb4f1a4c78330879d9ec06699197bb2cf0564736f6c634300050c0032",
+							"opcodes": "PUSH1 0x80 PUSH1 0x40 MSTORE CALLVALUE DUP1 ISZERO PUSH1 0xF JUMPI PUSH1 0x0 DUP1 REVERT JUMPDEST POP PUSH1 0xA6 DUP1 PUSH2 0x1E PUSH1 0x0 CODECOPY PUSH1 0x0 RETURN INVALID PUSH1 0x80 PUSH1 0x40 MSTORE CALLVALUE DUP1 ISZERO PUSH1 0xF JUMPI PUSH1 0x0 DUP1 REVERT JUMPDEST POP PUSH1 0x4 CALLDATASIZE LT PUSH1 0x28 JUMPI PUSH1 0x0 CALLDATALOAD PUSH1 0xE0 SHR DUP1 PUSH4 0x9A86139B EQ PUSH1 0x2D JUMPI JUMPDEST PUSH1 0x0 DUP1 REVERT JUMPDEST PUSH1 0x33 PUSH1 0x49 JUMP JUMPDEST PUSH1 0x40 MLOAD DUP1 DUP3 DUP2 MSTORE PUSH1 0x20 ADD SWAP2 POP POP PUSH1 0x40 MLOAD DUP1 SWAP2 SUB SWAP1 RETURN JUMPDEST PUSH1 0x0 PUSH32 0x42524F4E5A450000000000000000000000000000000000000000000000000000 SWAP1 POP SWAP1 JUMP INVALID LOG2 PUSH6 0x627A7A723158 KECCAK256 0xd1 BALANCE EXTCODESIZE 0xf9 LOG2 0xdc 0xc2 0xad ADDRESS 0xd2 0x1f 0xe1 0xe9 CALL SHR 0xb4 CALL LOG4 0xc7 DUP4 ADDRESS DUP8 SWAP14 SWAP15 0xc0 PUSH7 0x99197BB2CF0564 PUSH20 0x6F6C634300050C00320000000000000000000000 ",
+							"sourceMap": "129:158:0:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;129:158:0;;;;;;;"
+						},
+						"deployedBytecode": {
+							"linkReferences": {},
+							"object": "6080604052348015600f57600080fd5b506004361060285760003560e01c80639a86139b14602d575b600080fd5b60336049565b6040518082815260200191505060405180910390f35b60007f42524f4e5a45000000000000000000000000000000000000000000000000000090509056fea265627a7a72315820d1313bf9a2dcc2ad30d21fe1e9f11cb4f1a4c78330879d9ec06699197bb2cf0564736f6c634300050c0032",
+							"opcodes": "PUSH1 0x80 PUSH1 0x40 MSTORE CALLVALUE DUP1 ISZERO PUSH1 0xF JUMPI PUSH1 0x0 DUP1 REVERT JUMPDEST POP PUSH1 0x4 CALLDATASIZE LT PUSH1 0x28 JUMPI PUSH1 0x0 CALLDATALOAD PUSH1 0xE0 SHR DUP1 PUSH4 0x9A86139B EQ PUSH1 0x2D JUMPI JUMPDEST PUSH1 0x0 DUP1 REVERT JUMPDEST PUSH1 0x33 PUSH1 0x49 JUMP JUMPDEST PUSH1 0x40 MLOAD DUP1 DUP3 DUP2 MSTORE PUSH1 0x20 ADD SWAP2 POP POP PUSH1 0x40 MLOAD DUP1 SWAP2 SUB SWAP1 RETURN JUMPDEST PUSH1 0x0 PUSH32 0x42524F4E5A450000000000000000000000000000000000000000000000000000 SWAP1 POP SWAP1 JUMP INVALID LOG2 PUSH6 0x627A7A723158 KECCAK256 0xd1 BALANCE EXTCODESIZE 0xf9 LOG2 0xdc 0xc2 0xad ADDRESS 0xd2 0x1f 0xe1 0xe9 CALL SHR 0xb4 CALL LOG4 0xc7 DUP4 ADDRESS DUP8 SWAP14 SWAP15 0xc0 PUSH7 0x99197BB2CF0564 PUSH20 0x6F6C634300050C00320000000000000000000000 ",
+							"sourceMap": "129:158:0:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;129:158:0;;;;;;;;;;;;;;;;;;;163:121;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;224:7;255:17;248:24;;163:121;:::o"
+						},
+						"gasEstimates": {
+							"creation": {
+								"codeDepositCost": "33200",
+								"executionCost": "87",
+								"totalCost": "33287"
+							},
+							"external": {
+								"getColor()": "191"
+							}
+						},
+						"legacyAssembly": {
+							".code": [
+								{
+									"begin": 129,
+									"end": 287,
+									"name": "PUSH",
+									"value": "80"
+								},
+								{
+									"begin": 129,
+									"end": 287,
+									"name": "PUSH",
+									"value": "40"
+								},
+								{
+									"begin": 129,
+									"end": 287,
+									"name": "MSTORE"
+								},
+								{
+									"begin": 129,
+									"end": 287,
+									"name": "CALLVALUE"
+								},
+								{
+									"begin": 8,
+									"end": 17,
+									"name": "DUP1"
+								},
+								{
+									"begin": 5,
+									"end": 7,
+									"name": "ISZERO"
+								},
+								{
+									"begin": 5,
+									"end": 7,
+									"name": "PUSH [tag]",
+									"value": "1"
+								},
+								{
+									"begin": 5,
+									"end": 7,
+									"name": "JUMPI"
+								},
+								{
+									"begin": 30,
+									"end": 31,
+									"name": "PUSH",
+									"value": "0"
+								},
+								{
+									"begin": 27,
+									"end": 28,
+									"name": "DUP1"
+								},
+								{
+									"begin": 20,
+									"end": 32,
+									"name": "REVERT"
+								},
+								{
+									"begin": 5,
+									"end": 7,
+									"name": "tag",
+									"value": "1"
+								},
+								{
+									"begin": 5,
+									"end": 7,
+									"name": "JUMPDEST"
+								},
+								{
+									"begin": 129,
+									"end": 287,
+									"name": "POP"
+								},
+								{
+									"begin": 129,
+									"end": 287,
+									"name": "PUSH #[$]",
+									"value": "0000000000000000000000000000000000000000000000000000000000000000"
+								},
+								{
+									"begin": 129,
+									"end": 287,
+									"name": "DUP1"
+								},
+								{
+									"begin": 129,
+									"end": 287,
+									"name": "PUSH [$]",
+									"value": "0000000000000000000000000000000000000000000000000000000000000000"
+								},
+								{
+									"begin": 129,
+									"end": 287,
+									"name": "PUSH",
+									"value": "0"
+								},
+								{
+									"begin": 129,
+									"end": 287,
+									"name": "CODECOPY"
+								},
+								{
+									"begin": 129,
+									"end": 287,
+									"name": "PUSH",
+									"value": "0"
+								},
+								{
+									"begin": 129,
+									"end": 287,
+									"name": "RETURN"
+								}
+							],
+							".data": {
+								"0": {
+									".auxdata": "a265627a7a72315820d1313bf9a2dcc2ad30d21fe1e9f11cb4f1a4c78330879d9ec06699197bb2cf0564736f6c634300050c0032",
+									".code": [
+										{
+											"begin": 129,
+											"end": 287,
+											"name": "PUSH",
+											"value": "80"
+										},
+										{
+											"begin": 129,
+											"end": 287,
+											"name": "PUSH",
+											"value": "40"
+										},
+										{
+											"begin": 129,
+											"end": 287,
+											"name": "MSTORE"
+										},
+										{
+											"begin": 129,
+											"end": 287,
+											"name": "CALLVALUE"
+										},
+										{
+											"begin": 8,
+											"end": 17,
+											"name": "DUP1"
+										},
+										{
+											"begin": 5,
+											"end": 7,
+											"name": "ISZERO"
+										},
+										{
+											"begin": 5,
+											"end": 7,
+											"name": "PUSH [tag]",
+											"value": "1"
+										},
+										{
+											"begin": 5,
+											"end": 7,
+											"name": "JUMPI"
+										},
+										{
+											"begin": 30,
+											"end": 31,
+											"name": "PUSH",
+											"value": "0"
+										},
+										{
+											"begin": 27,
+											"end": 28,
+											"name": "DUP1"
+										},
+										{
+											"begin": 20,
+											"end": 32,
+											"name": "REVERT"
+										},
+										{
+											"begin": 5,
+											"end": 7,
+											"name": "tag",
+											"value": "1"
+										},
+										{
+											"begin": 5,
+											"end": 7,
+											"name": "JUMPDEST"
+										},
+										{
+											"begin": 129,
+											"end": 287,
+											"name": "POP"
+										},
+										{
+											"begin": 129,
+											"end": 287,
+											"name": "PUSH",
+											"value": "4"
+										},
+										{
+											"begin": 129,
+											"end": 287,
+											"name": "CALLDATASIZE"
+										},
+										{
+											"begin": 129,
+											"end": 287,
+											"name": "LT"
+										},
+										{
+											"begin": 129,
+											"end": 287,
+											"name": "PUSH [tag]",
+											"value": "2"
+										},
+										{
+											"begin": 129,
+											"end": 287,
+											"name": "JUMPI"
+										},
+										{
+											"begin": 129,
+											"end": 287,
+											"name": "PUSH",
+											"value": "0"
+										},
+										{
+											"begin": 129,
+											"end": 287,
+											"name": "CALLDATALOAD"
+										},
+										{
+											"begin": 129,
+											"end": 287,
+											"name": "PUSH",
+											"value": "E0"
+										},
+										{
+											"begin": 129,
+											"end": 287,
+											"name": "SHR"
+										},
+										{
+											"begin": 129,
+											"end": 287,
+											"name": "DUP1"
+										},
+										{
+											"begin": 129,
+											"end": 287,
+											"name": "PUSH",
+											"value": "9A86139B"
+										},
+										{
+											"begin": 129,
+											"end": 287,
+											"name": "EQ"
+										},
+										{
+											"begin": 129,
+											"end": 287,
+											"name": "PUSH [tag]",
+											"value": "3"
+										},
+										{
+											"begin": 129,
+											"end": 287,
+											"name": "JUMPI"
+										},
+										{
+											"begin": 129,
+											"end": 287,
+											"name": "tag",
+											"value": "2"
+										},
+										{
+											"begin": 129,
+											"end": 287,
+											"name": "JUMPDEST"
+										},
+										{
+											"begin": 129,
+											"end": 287,
+											"name": "PUSH",
+											"value": "0"
+										},
+										{
+											"begin": 129,
+											"end": 287,
+											"name": "DUP1"
+										},
+										{
+											"begin": 129,
+											"end": 287,
+											"name": "REVERT"
+										},
+										{
+											"begin": 163,
+											"end": 284,
+											"name": "tag",
+											"value": "3"
+										},
+										{
+											"begin": 163,
+											"end": 284,
+											"name": "JUMPDEST"
+										},
+										{
+											"begin": 163,
+											"end": 284,
+											"name": "PUSH [tag]",
+											"value": "4"
+										},
+										{
+											"begin": 163,
+											"end": 284,
+											"name": "PUSH [tag]",
+											"value": "5"
+										},
+										{
+											"begin": 163,
+											"end": 284,
+											"name": "JUMP",
+											"value": "[in]"
+										},
+										{
+											"begin": 163,
+											"end": 284,
+											"name": "tag",
+											"value": "4"
+										},
+										{
+											"begin": 163,
+											"end": 284,
+											"name": "JUMPDEST"
+										},
+										{
+											"begin": 163,
+											"end": 284,
+											"name": "PUSH",
+											"value": "40"
+										},
+										{
+											"begin": 163,
+											"end": 284,
+											"name": "MLOAD"
+										},
+										{
+											"begin": 163,
+											"end": 284,
+											"name": "DUP1"
+										},
+										{
+											"begin": 163,
+											"end": 284,
+											"name": "DUP3"
+										},
+										{
+											"begin": 163,
+											"end": 284,
+											"name": "DUP2"
+										},
+										{
+											"begin": 163,
+											"end": 284,
+											"name": "MSTORE"
+										},
+										{
+											"begin": 163,
+											"end": 284,
+											"name": "PUSH",
+											"value": "20"
+										},
+										{
+											"begin": 163,
+											"end": 284,
+											"name": "ADD"
+										},
+										{
+											"begin": 163,
+											"end": 284,
+											"name": "SWAP2"
+										},
+										{
+											"begin": 163,
+											"end": 284,
+											"name": "POP"
+										},
+										{
+											"begin": 163,
+											"end": 284,
+											"name": "POP"
+										},
+										{
+											"begin": 163,
+											"end": 284,
+											"name": "PUSH",
+											"value": "40"
+										},
+										{
+											"begin": 163,
+											"end": 284,
+											"name": "MLOAD"
+										},
+										{
+											"begin": 163,
+											"end": 284,
+											"name": "DUP1"
+										},
+										{
+											"begin": 163,
+											"end": 284,
+											"name": "SWAP2"
+										},
+										{
+											"begin": 163,
+											"end": 284,
+											"name": "SUB"
+										},
+										{
+											"begin": 163,
+											"end": 284,
+											"name": "SWAP1"
+										},
+										{
+											"begin": 163,
+											"end": 284,
+											"name": "RETURN"
+										},
+										{
+											"begin": 163,
+											"end": 284,
+											"name": "tag",
+											"value": "5"
+										},
+										{
+											"begin": 163,
+											"end": 284,
+											"name": "JUMPDEST"
+										},
+										{
+											"begin": 224,
+											"end": 231,
+											"name": "PUSH",
+											"value": "0"
+										},
+										{
+											"begin": 255,
+											"end": 272,
+											"name": "PUSH",
+											"value": "42524F4E5A450000000000000000000000000000000000000000000000000000"
+										},
+										{
+											"begin": 248,
+											"end": 272,
+											"name": "SWAP1"
+										},
+										{
+											"begin": 248,
+											"end": 272,
+											"name": "POP"
+										},
+										{
+											"begin": 163,
+											"end": 284,
+											"name": "SWAP1"
+										},
+										{
+											"begin": 163,
+											"end": 284,
+											"name": "JUMP",
+											"value": "[out]"
+										}
+									]
+								}
+							}
+						},
+						"methodIdentifiers": {
+							"getColor()": "9a86139b"
+						}
+					},
+					"metadata": "{\"compiler\":{\"version\":\"0.5.12+commit.7709ece9\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"constant\":true,\"inputs\":[],\"name\":\"getColor\",\"outputs\":[{\"internalType\":\"bytes32\",\"name\":\"\",\"type\":\"bytes32\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"Contracts/BColor.sol\":\"BBronze\"},\"evmVersion\":\"petersburg\",\"libraries\":{},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"Contracts/BColor.sol\":{\"keccak256\":\"0x47e6dfdf55fbb5f781d4422882964b5026a9d3ae6d9c36bf5b909bf8ffac840b\",\"urls\":[\"bzz-raw://37a685b44a7507058abd4602e5132f1001ec67799521f4c3db83d787a11d31f9\",\"dweb:/ipfs/QmaFje2c9F35ws5Na6n8BRur2RXDGopZeUiFJy1ywwH5EV\"]}},\"version\":1}",
+					"userdoc": {
+						"methods": {}
+					}
+				},
+				"BColor": {
+					"abi": [
+						{
+							"constant": true,
+							"inputs": [],
+							"name": "getColor",
+							"outputs": [
+								{
+									"internalType": "bytes32",
+									"name": "",
+									"type": "bytes32"
+								}
+							],
+							"payable": false,
+							"stateMutability": "view",
+							"type": "function"
+						}
+					],
+					"devdoc": {
+						"methods": {}
+					},
+					"evm": {
+						"assembly": "",
+						"bytecode": {
+							"linkReferences": {},
+							"object": "",
+							"opcodes": "",
+							"sourceMap": ""
+						},
+						"deployedBytecode": {
+							"linkReferences": {},
+							"object": "",
+							"opcodes": "",
+							"sourceMap": ""
+						},
+						"gasEstimates": null,
+						"legacyAssembly": null,
+						"methodIdentifiers": {
+							"getColor()": "9a86139b"
+						}
+					},
+					"metadata": "{\"compiler\":{\"version\":\"0.5.12+commit.7709ece9\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"constant\":true,\"inputs\":[],\"name\":\"getColor\",\"outputs\":[{\"internalType\":\"bytes32\",\"name\":\"\",\"type\":\"bytes32\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"Contracts/BColor.sol\":\"BColor\"},\"evmVersion\":\"petersburg\",\"libraries\":{},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"Contracts/BColor.sol\":{\"keccak256\":\"0x47e6dfdf55fbb5f781d4422882964b5026a9d3ae6d9c36bf5b909bf8ffac840b\",\"urls\":[\"bzz-raw://37a685b44a7507058abd4602e5132f1001ec67799521f4c3db83d787a11d31f9\",\"dweb:/ipfs/QmaFje2c9F35ws5Na6n8BRur2RXDGopZeUiFJy1ywwH5EV\"]}},\"version\":1}",
+					"userdoc": {
+						"methods": {}
+					}
+				}
+			}
+		},
+		"sources": {
+			"Contracts/BColor.sol": {
+				"ast": {
+					"absolutePath": "Contracts/BColor.sol",
+					"exportedSymbols": {
+						"BBronze": [
+							20
+						],
+						"BColor": [
+							7
+						]
+					},
+					"id": 21,
+					"nodeType": "SourceUnit",
+					"nodes": [
+						{
+							"id": 1,
+							"literals": [
+								"solidity",
+								"0.5",
+								".12"
+							],
+							"nodeType": "PragmaDirective",
+							"src": "2:23:0"
+						},
+						{
+							"baseContracts": [],
+							"contractDependencies": [],
+							"contractKind": "contract",
+							"documentation": null,
+							"fullyImplemented": false,
+							"id": 7,
+							"linearizedBaseContracts": [
+								7
+							],
+							"name": "BColor",
+							"nodeType": "ContractDefinition",
+							"nodes": [
+								{
+									"body": null,
+									"documentation": null,
+									"id": 6,
+									"implemented": false,
+									"kind": "function",
+									"modifiers": [],
+									"name": "getColor",
+									"nodeType": "FunctionDefinition",
+									"parameters": {
+										"id": 2,
+										"nodeType": "ParameterList",
+										"parameters": [],
+										"src": "69:2:0"
+									},
+									"returnParameters": {
+										"id": 5,
+										"nodeType": "ParameterList",
+										"parameters": [
+											{
+												"constant": false,
+												"id": 4,
+												"name": "",
+												"nodeType": "VariableDeclaration",
+												"scope": 6,
+												"src": "113:7:0",
+												"stateVariable": false,
+												"storageLocation": "default",
+												"typeDescriptions": {
+													"typeIdentifier": "t_bytes32",
+													"typeString": "bytes32"
+												},
+												"typeName": {
+													"id": 3,
+													"name": "bytes32",
+													"nodeType": "ElementaryTypeName",
+													"src": "113:7:0",
+													"typeDescriptions": {
+														"typeIdentifier": "t_bytes32",
+														"typeString": "bytes32"
+													}
+												},
+												"value": null,
+												"visibility": "internal"
+											}
+										],
+										"src": "112:9:0"
+									},
+									"scope": 7,
+									"src": "52:70:0",
+									"stateMutability": "view",
+									"superFunction": null,
+									"visibility": "external"
+								}
+							],
+							"scope": 21,
+							"src": "29:96:0"
+						},
+						{
+							"baseContracts": [
+								{
+									"arguments": null,
+									"baseName": {
+										"contractScope": null,
+										"id": 8,
+										"name": "BColor",
+										"nodeType": "UserDefinedTypeName",
+										"referencedDeclaration": 7,
+										"src": "149:6:0",
+										"typeDescriptions": {
+											"typeIdentifier": "t_contract$_BColor_$7",
+											"typeString": "contract BColor"
+										}
+									},
+									"id": 9,
+									"nodeType": "InheritanceSpecifier",
+									"src": "149:6:0"
+								}
+							],
+							"contractDependencies": [
+								7
+							],
+							"contractKind": "contract",
+							"documentation": null,
+							"fullyImplemented": true,
+							"id": 20,
+							"linearizedBaseContracts": [
+								20,
+								7
+							],
+							"name": "BBronze",
+							"nodeType": "ContractDefinition",
+							"nodes": [
+								{
+									"body": {
+										"id": 18,
+										"nodeType": "Block",
+										"src": "233:51:0",
+										"statements": [
+											{
+												"expression": {
+													"argumentTypes": null,
+													"arguments": [
+														{
+															"argumentTypes": null,
+															"hexValue": "42524f4e5a45",
+															"id": 15,
+															"isConstant": false,
+															"isLValue": false,
+															"isPure": true,
+															"kind": "string",
+															"lValueRequested": false,
+															"nodeType": "Literal",
+															"src": "263:8:0",
+															"subdenomination": null,
+															"typeDescriptions": {
+																"typeIdentifier": "t_stringliteral_4163e3f7a99fc80b57ec838b307c7a27558a888bb048d8e4d5cc03e3134dee47",
+																"typeString": "literal_string \"BRONZE\""
+															},
+															"value": "BRONZE"
+														}
+													],
+													"expression": {
+														"argumentTypes": [
+															{
+																"typeIdentifier": "t_stringliteral_4163e3f7a99fc80b57ec838b307c7a27558a888bb048d8e4d5cc03e3134dee47",
+																"typeString": "literal_string \"BRONZE\""
+															}
+														],
+														"id": 14,
+														"isConstant": false,
+														"isLValue": false,
+														"isPure": true,
+														"lValueRequested": false,
+														"nodeType": "ElementaryTypeNameExpression",
+														"src": "255:7:0",
+														"typeDescriptions": {
+															"typeIdentifier": "t_type$_t_bytes32_$",
+															"typeString": "type(bytes32)"
+														},
+														"typeName": "bytes32"
+													},
+													"id": 16,
+													"isConstant": false,
+													"isLValue": false,
+													"isPure": true,
+													"kind": "typeConversion",
+													"lValueRequested": false,
+													"names": [],
+													"nodeType": "FunctionCall",
+													"src": "255:17:0",
+													"typeDescriptions": {
+														"typeIdentifier": "t_bytes32",
+														"typeString": "bytes32"
+													}
+												},
+												"functionReturnParameters": 13,
+												"id": 17,
+												"nodeType": "Return",
+												"src": "248:24:0"
+											}
+										]
+									},
+									"documentation": null,
+									"id": 19,
+									"implemented": true,
+									"kind": "function",
+									"modifiers": [],
+									"name": "getColor",
+									"nodeType": "FunctionDefinition",
+									"parameters": {
+										"id": 10,
+										"nodeType": "ParameterList",
+										"parameters": [],
+										"src": "180:2:0"
+									},
+									"returnParameters": {
+										"id": 13,
+										"nodeType": "ParameterList",
+										"parameters": [
+											{
+												"constant": false,
+												"id": 12,
+												"name": "",
+												"nodeType": "VariableDeclaration",
+												"scope": 19,
+												"src": "224:7:0",
+												"stateVariable": false,
+												"storageLocation": "default",
+												"typeDescriptions": {
+													"typeIdentifier": "t_bytes32",
+													"typeString": "bytes32"
+												},
+												"typeName": {
+													"id": 11,
+													"name": "bytes32",
+													"nodeType": "ElementaryTypeName",
+													"src": "224:7:0",
+													"typeDescriptions": {
+														"typeIdentifier": "t_bytes32",
+														"typeString": "bytes32"
+													}
+												},
+												"value": null,
+												"visibility": "internal"
+											}
+										],
+										"src": "223:9:0"
+									},
+									"scope": 20,
+									"src": "163:121:0",
+									"stateMutability": "view",
+									"superFunction": 6,
+									"visibility": "external"
+								}
+							],
+							"scope": 21,
+							"src": "129:158:0"
+						}
+					],
+					"src": "2:287:0"
+				},
+				"id": 0
+			}
+		}
+	}
+}
